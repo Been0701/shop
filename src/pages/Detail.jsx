@@ -28,7 +28,7 @@ const Detail = ({shoes}) => {
     
 
     useEffect(() => {
-        let a = setTimeout(() => {setPopup(false)},3000)
+        let a = setTimeout(() => {setPopup(false)},10000)
         setFade2('end');
 
        return ()=>{
@@ -64,7 +64,7 @@ const Detail = ({shoes}) => {
             <div className={`container start ${fade2}`}>
                {
                 popup === true ? <div className='alert alert-warning'>
-                3초 이내 구매시 할인
+                10초 이내 구매시 할인
                     </div> : null
                }
                {/* <input onChange={(e)=>{setInput(e.target.value)}}></input> */}
