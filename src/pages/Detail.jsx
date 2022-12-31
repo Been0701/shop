@@ -8,11 +8,10 @@ import Recent from './Recent';
 import Swal from 'sweetalert2';
 
 
-const Detail = ({shoes}) => {
-
-   
+const Detail = ({shoes}) => {  
 
     let {id} = useParams();
+    id = parseInt(id);
     let found = shoes.find((item) => item.id === id);
     let [popup, setPopup] = useState(true);
     let [tab, setTab] = useState(0);
