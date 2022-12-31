@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {Nav} from 'react-bootstrap';
 import {addCart} from '../store'
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,7 @@ const Detail = ({shoes}) => {
    
 
     let {id} = useParams();
-    let found = shoes.find((item) => item.id == id);
+    let found = shoes.find((item) => item.id === id);
     let [popup, setPopup] = useState(true);
     let [tab, setTab] = useState(0);
     let [fade2, setFade2] = useState('');
@@ -25,7 +25,7 @@ const Detail = ({shoes}) => {
         out.push(found.id);
         out = [...new Set(out)];
         localStorage.setItem('watched', JSON.stringify(out));
-    },[])
+    },[found.id])
     
 
     useEffect(() => {
